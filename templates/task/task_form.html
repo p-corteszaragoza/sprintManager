@@ -1,0 +1,66 @@
+{% extends 'task/task_detail.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+<div class="header-bar">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/task.css' %}">
+    <a href="{% url 'tasks' %}">&#8592; Back</a>
+</div>
+
+<div id="body-pd">
+    <header class="header" id="header">
+        <div class="header_toggle">
+            <img class="bx bx-menu" id="header-toggle" width="40px" src="/static/images/burger-menu.jpg" alt="burger menu">
+        <div class="header-logout">  
+            <img class="exit-icon" src="/static/images/exit.png" alt="burger menu">
+            {% if request.user.is_authenticated %}
+                <a class="header-text" href="{% url 'user_logout' %}">Logout</a> 
+            {% else %}
+                <a class="header-text" href="{% url 'user_login' %}">Login</a> 
+            {% endif %} 
+            <div> </div>
+        </div>
+    </div>
+    </header>
+    
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div>
+                <a href="#" class="nav_logo">
+                    <img class="bx bx-menu" id="header-toggle" width="30px" src="/static/images/app-icon.png" alt="burger menu">
+                    <span class="nav_logo-name">Scrum Manager</span>
+                </a>
+                <div class="nav_list"> 
+                    <a href="{% url 'tasks' %}" class="nav_link active">
+                        <img width="35px" src="/static/images/task-icon.png" alt="burger menu">
+                        <span class="nav_name">Task</span>
+                    </a>
+                    <a href="#" class="nav_link">
+                        <img width="30px" src="/static/images/backlog-icon.png" alt="burger menu">
+                        <span class="nav_name">Backlog</span>
+                    </a>
+
+                    <a href="#" class="nav_link">
+                        <img width="30px" src="/static/images/board-icon.png" alt="burger menu">
+                        <span class="nav_name">Board</span>
+                    </a>  
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <script src="{% static 'js/main.js' %}"></script>  
+</div>
+
+<div class="card-body">
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="button" type="submit" value="Submit">
+    </form>
+</div>
+
+
+{% endblock content %}

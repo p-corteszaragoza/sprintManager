@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --login-background: #f8f3ff;
+    --title-background: #0345ff;
+    --button-background: #ffb102;
+    --button-hover: #b37f06;
+    --light-color: #82b4e8;
+    --light-hover: #6e93b9;
+    --image-background: #269cc0fa;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(to top, #000484 0%, #b0f6e3 100%);
+}
+
+.login-container {
+    height: 43.75em;
+    width: 60em;
+    margin: 6em auto;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.login-info-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 0.5rem;
+    background-color: var(--login-background);
+
+}
+
+.image-container {
+    width: 50%;
+    background-color: var(--image-background);
+    box-sizing: border-box;
+}
+
+.title {
+    text-transform: capitalize;
+    font-size: 2.25rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--title-background);
+}
+
+.login-info-container > p {
+    font-size: 1.25em;
+    margin-top: 1.5em;
+}
+
+.inputs-container {
+    height: 55%;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.input, .btn {
+    width: 90%;
+    height: 3.125rem;
+    font-size: 1rem;
+}
+
+input {
+    padding-left: 20px;
+    border: 1px solid #ded8d8;
+    height: 42px;
+    width: 248px;
+    border-radius: 36px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+}
+
+.input:hover {
+    border: 2px solid var(--button-background);
+}
+
+.btn {
+    width: 80%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: var(--button-background);
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    border-bottom: solid 4px #ced5e5;
+    border-right: solid 2px #ced5e5;
+}
+
+.btn:active {/*on Click*/
+    -ms-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*Move down*/
+    border-bottom: none;/*disappears*/
+}
+
+.btn:hover {
+    background-color: var(--button-hover);
+}
+
+.inputs-container p {
+    margin: 0;
+}
+
+.span {
+    color: var(--light-color);
+    font-weight: 600;
+    cursor: pointer;
+
+}
+
+.span:hover{
+    color: var(--light-hover);
+}

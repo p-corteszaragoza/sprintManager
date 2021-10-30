@@ -1,0 +1,16 @@
+{% load crispy_forms_tags %}
+{% block content %}
+{% load static %}
+<div class="header-bar">
+    <div>
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+        <h1>Hello {{request.user|title}}</h1>
+    </div>
+
+    {% if request.user.is_authenticated %}
+    <a href="{% url 'user_logout' %}">Logout</a> {% else %}
+    <a href="{% url 'user_login' %}">Login</a> {% endif %}
+</div>
+
+{% endblock content %}

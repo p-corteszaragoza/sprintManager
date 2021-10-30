@@ -1,0 +1,92 @@
+{% load crispy_forms_tags %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=!, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/home.css' %}">
+        <link rel="stylesheet" href="{% static 'css/task.css' %}">
+        <link rel="stylesheet" href="{% static 'css/task_detail.css' %}">
+        <title>SCRUM To Do List</title>
+    </head>
+
+    <div id="body-pd">
+        <header class="header" id="header">
+            <div class="header_toggle">
+                <img class="bx bx-menu" id="header-toggle" width="40px" src="/static/images/burger-menu.jpg" alt="burger menu">
+            <div class="header-logout">  
+                <img class="exit-icon" src="/static/images/exit.png" alt="burger menu">
+                {% if request.user.is_authenticated %}
+                    <a class="header-text" href="{% url 'user_logout' %}">Logout</a> 
+                {% else %}
+                    <a class="header-text" href="{% url 'user_login' %}">Login</a> 
+                {% endif %} 
+                <div> </div>
+            </div>
+        </div>
+        </header>
+        
+        <div class="l-navbar" id="nav-bar">
+            <nav class="nav">
+                <div>
+                    <a href="#" class="nav_logo">
+                        <img class="bx bx-menu" id="header-toggle" width="30px" src="/static/images/app-icon.png" alt="burger menu">
+                        <span class="nav_logo-name">Scrum Manager</span>
+                    </a>
+                    <div class="nav_list"> 
+                        <a href="{% url 'tasks' %}" class="nav_link active">
+                            <img width="35px" src="/static/images/task-icon.png" alt="burger menu">
+                            <span class="nav_name">Task</span>
+                        </a>
+                        <a href="#" class="nav_link">
+                            <img width="30px" src="/static/images/backlog-icon.png" alt="burger menu">
+                            <span class="nav_name">Backlog</span>
+                        </a>
+
+                        <a href="#" class="nav_link">
+                            <img width="30px" src="/static/images/board-icon.png" alt="burger menu">
+                            <span class="nav_name">Board</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <script src="{% static 'js/main.js' %}"></script>  
+    </div>
+
+    <div class="header-back-button">
+        <a href="{% url 'tasks' %}">&#8592; Back</a>
+    </div>
+
+    <body>
+        <h1 class="task-title"> TASK DETAIL</h1>
+        <div class="background-form">  
+            <div class="row">
+                <div class="column">
+                    <div><p>User <span class="info">{{tasks.user}}</span></p></div>
+                    <div><p>Title <span class="info">{{tasks.title}}</span></p></div>
+                    <div><p>Description <span class="info">{{tasks.description}}</span></p></div>
+                    <div><p>Complete <span class="info">{{tasks.complete}}</span></p></div>
+                    <div><p>Created <span class="info">{{tasks.created}}</span></p></div>
+                </div>
+                <div class="column">
+                    <div><p>Sprint <span class="info">{{tasks.sprint}}</span></p></div>
+                    <div><p>Project Name <span class="info">{{tasks.projectname}}</span></p></div>
+                    <div><p>Status <span class="info">{{tasks.status}}</span></p></div>                    
+                    <div><p>Sub-Task <span class="info">{{tasks.subtask}}</span></p></div>
+                    <div  class="task-title" style="margin: 12px 0px;">
+                        <span><a href="{% url 'task_update' tasks.pk %}" class="btn btn-style btn-edit">Edit</a> </span> 
+                        <span><a href="{% url 'task_delete' tasks.pk %}" class="btn btn-style btn-delete">Delete</a> </span> 
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </body>
+</html>
+{% endblock content %}

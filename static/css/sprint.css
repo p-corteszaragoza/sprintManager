@@ -1,0 +1,15 @@
+.center-title {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.align-title {
+    margin-left: 10rem;
+    padding-top: 3rem;
+}
+
+.align-btn-create {
+    margin-right: 10rem;
+    padding-top: 3rem;
+}

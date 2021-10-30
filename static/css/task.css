@@ -1,0 +1,92 @@
+:root {
+    --button-edit: #18D714;
+    --button-delete: #FF0000;
+    --button-detail: #0066FF;
+    --button-background: #ffb102;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+    border-radius: 5px;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  img {
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .container {
+    padding: 2px 16px;
+  }
+
+  
+.btn {
+    width: 80%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    border-bottom: solid 2px #ced5e5;
+    border-right: solid 1px #ced5e5;
+    background-color: var(--button-background);    
+    padding: 9px 11px;
+    margin: 8px;
+}
+
+.btn:active {/*on Click*/
+    -ms-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*Move down*/
+    border-bottom: none;/*disappears*/
+}
+
+.btn-style {   
+    font-size: .7rem;
+    margin: 3px;
+}
+
+.btn-edit {
+    background-color: var(--button-edit);
+}
+
+.btn-delete {
+    background-color: var(--button-delete);
+}
+
+.btn-detail {
+    background-color: var(--button-detail);
+}
+
+.btn-add-task {
+    margin: 22px 0px;
+    float: right;
+    padding: 2px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border-bottom: 1px solid #7a7a7a;
+    text-align: center;
+}
+
+tr {
+    background-color: rgba(196, 196, 196, 0.12);
+}
+
+.table-container {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem 10rem;
+}
